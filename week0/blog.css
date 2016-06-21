@@ -1,0 +1,23 @@
+.niceParagraph {
+	background-color: blue;
+	font-family: "Baskerville";
+}
+
+body {
+	background-color: grey;
+	font-family: "Baskerville";
+}
+
+header {
+	background-color: white;
+	font-size: 28px
+}
+
+p {
+	background-color: lightblue;
+}
+
+article {
+	background-color: white;
+	font-family: "Baskerville"
+}
