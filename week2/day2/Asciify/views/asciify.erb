@@ -1,0 +1,11 @@
+<% require "artii"  %>
+
+
+<p> <%=  @word  %>      </p>
+
+<% a = Artii::Base.new :font => @font %>
+
+<pre> <%=a.asciify(@word)%> </pre>
+
+
+
