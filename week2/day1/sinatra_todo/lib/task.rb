@@ -1,3 +1,5 @@
+require_relative("todo_list.rb")
+
 class Task
     attr_reader :content, :id, :created_at
     @@current_id = 1
@@ -30,21 +32,15 @@ class Task
     end
 
     def update_content!(new_content)
-    	@content = new_content
+    	@content << new_content
     end
 end
 
 
 
-task = Task.new("Buy the milk")
-task.complete?
-task.complete!
-# task.make_incomplete!
-puts task.id
 
-task2 = Task.new("Wash the car")
-task.complete?
-puts task2.id
+
+
 
 
 

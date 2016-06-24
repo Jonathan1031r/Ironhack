@@ -1,0 +1,9 @@
+<h1> Welcome to the ToDoList </h1>
+
+<h2> Your list of task: </h2>
+
+<ul>
+	<% @task.each |list|  %>
+	<%= list.content %>
+	<% end %>
+</ul>

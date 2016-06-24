@@ -1,0 +1,14 @@
+<h1> Welcome To My Amazing Blog Of Cool Shit </h1>
+
+<h2> Check out our latest updates! </h2>
+
+<ul>
+<% @posts.each_with_index do |post, index| %>
+<li>
+  <a href="/more_info/<%= index%>"><%= post.title %></a>
+</li>
+<% end %>
+</ul>
+
+<a href="/new_post">Make your own post, click here!</a>
+

@@ -1,4 +1,4 @@
-equire("imdb")
+require("imdb")
 
 file = "title.txt"
 movies_arr = []
