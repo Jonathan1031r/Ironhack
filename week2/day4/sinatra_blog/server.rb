@@ -17,7 +17,7 @@ the_blog.add_post Post.new("The Sixth", Time.new(1999, 5, 4), "Last but never fo
 
 get "/" do 
 	@posts = the_blog.time
-	erb :blog
+	erb (:blog)
 end 
 
 get "/more_info/:number" do
