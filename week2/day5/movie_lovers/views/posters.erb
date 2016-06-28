@@ -1,14 +1,14 @@
 <center><h1><u> Movie Trivia </u></h1></center>
 
 <center><h3> Choose the movie that matches the year 
-<%= @correct.year %>
+<%= @answer.year %>
 to win! </h3></center>
 
 <% @the_movies.each do |movie| %>
 
 <button>
 	<img src="<%= movie.poster %>" height="256" width="168" 
-		<% if movie.year == @correct.year %>
+		<% if movie.year == @answer.year %>
 			onclick = "alert('Congrates you win! <%= movie.title%> was the correct answer!')">
 		<% else %>
 			<img src="<%= movie.poster %>" height="256" width="168" 

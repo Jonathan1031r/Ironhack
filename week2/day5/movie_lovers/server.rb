@@ -14,7 +14,7 @@ post "/posters" do
 	@word = params[:word]
 	@the_search = Imdb::Search.new(@word).movies
 	@the_movies = Movie.new(@word).filter
-	@correct = @the_movies.sample
+	@answer = @the_movies.sample
 	
 	erb (:posters)	
 end
