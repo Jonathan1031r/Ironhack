@@ -18,13 +18,67 @@ body{
 }
 
 #menu{
-	height: 800px;
+	height: 700px;
 	background: lightgray;
 /*	border: 5px;
 	border-color: black;
 	border: solid;*/
+
 }
 
 #blk-glyphicon{
 	color: black;
 }
+
+.box1{
+	width: 250px;
+	height: 450px;
+	background: lightgray;
+	border-radius: 3px;
+	margin: 5px;
+
+}
+
+.box2{
+	width: 250px;
+	height: 380px;
+	background: lightgray;
+	border-radius: 3px;
+	margin: 5px;
+
+}
+
+.box3{
+	width: 250px;
+	height: 190px;
+	background: lightgray;
+	border-radius: 3px;
+	margin: 5px;
+
+}
+
+p{
+	padding: 10px;
+	margin: 150px;
+	background: white;
+	border-radius: 5px;
+}
+
+div{
+	padding: 3px;
+}
+
+#sign_up_bar{
+	background: #e7d6a7;
+	height: 50px;
+}
+
+.row{
+	border-color: black;
+	border: 1px;
+}
+
+
+
+
+
