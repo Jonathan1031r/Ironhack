@@ -391,7 +391,7 @@ describe("the JavaScript language", function(){
 
     it("may define complex objects", function(){
         // write the contents of the obj to make the satisfy the expectations:
-
+        
         //expect(user.address.street).toEqual('sesame');
         //expect(user.friends[0].name).toEqual('triki');
     });
