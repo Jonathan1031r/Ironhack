@@ -1,0 +1,36 @@
+.fa{
+	color: #1da1f2;
+}
+.profilePic{
+	position: absolute;
+	border: 5px solid white;
+	border-radius: 15px;
+	position: relative;
+    bottom: 70px;
+    left: 70px;
+}
+.search-input{
+	border-radius: 21px;
+}
+#titleBar{
+	height: 50px;
+
+}
+.profile-banner{
+	height: 380px;
+	width: 100%;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+.container{
+	margin-right: 70px;
+	margin-left: 70px;
+}
+#tweetBar{
+	position: absolute;
+	bottom: 230px;
+	right: 500px;
+}
+.color{
+	color: #009999;
+}
