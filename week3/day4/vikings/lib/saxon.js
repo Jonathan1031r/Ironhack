@@ -7,9 +7,9 @@ class Saxon {
     this.strength = strength;
   }
 
-  attack (otherNpc){
-    otherNpc.health = otherNpc.health - this.strength;
-  }
+ attack(opponent){
+    	opponent.health = opponent.health - this.strength;
+	}
 }
 
 module.exports = Saxon;

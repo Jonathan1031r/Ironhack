@@ -9,7 +9,7 @@ class Viking{
     }
     attack(opponent){
     	opponent.health = opponent.health - this.strength;
-    		console.log(this.name + "attacked" + opponent.name + "inflicting" + this.strength + "of damage.")
+    		console.log(this.name + " attacked " + opponent.name + " inflicting " + this.strength + "hp of damage.")
 	}
 } 
 

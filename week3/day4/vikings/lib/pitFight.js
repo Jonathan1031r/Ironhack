@@ -12,12 +12,12 @@ class pitFight{
 	}
 
 start(){
-	console.log(this.v1.name + 'vs' + this.v2.name + "FIGHT!!")
+	console.log(this.v1.name + '-vs-' + this.v2.name + "----->FIGHT!!")
 	this.battle();
 }
 
 nearDeath(){
-	return(this.v1.health <= 30) || (this.v2.health <= 30);
+	return(this.v1.health <= 40) || (this.v2.health <= 40);
 }	
 
 battle(){
@@ -42,8 +42,8 @@ printFormat(){
 	var attacking = this.side.offence;
 	var defending = this.side.defence;
 	console.log("<----------------------------------->");
-	console.log(attacking.name + "has" + attacking.health + "health")
-	console.log(defending.name + "has been attacked and has" + defending.health + "health")
+	console.log(attacking.name + " has " + attacking.health + "hp left")
+	console.log(defending.name + " has been attacked and has " + defending.health + " hp")
 	}
 }
 
