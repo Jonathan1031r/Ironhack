@@ -1,0 +1,9 @@
+<h1>List of projects</h1>
+
+<ul>
+	<% @project_array.each do |the_project|%>
+	<li>
+		<%= the_project.name %>
+	</li>
+	<% end %>
+</ul>
