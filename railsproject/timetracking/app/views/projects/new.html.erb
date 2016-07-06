@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Add a project</h1>
+
+<%= form_for @my_project do |f| %>
+	<%= f.label :name %>
+	<%= f.text_feild :name %>
+
+	<%= f.label :desscription %>
+	<%= f.text_area :desscription %>
+
+	<%= f.button %>
+<% end %>
+
+</body>
+</html>

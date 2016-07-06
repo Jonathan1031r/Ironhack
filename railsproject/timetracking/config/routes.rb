@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
 	get '/contact', to: 'site#contact'
 
-	get '/project', to: 'projects#index'
+	get '/projects/new', to: 'projects#new'
 
-	get '/projects/:id', to: '/projects#show'
+	get '/projects', to: 'projects#index'
+
+	get '/projects/:id', to: 'projects#show'
 end
 
