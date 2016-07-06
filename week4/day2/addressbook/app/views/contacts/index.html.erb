@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3><u>List of your contacts</u></h3>
+
+<div>
+<ul>
+
+<% @contacts_arr.each do |contact| %>
+
+<li>
+<%= contact.name %>
+	
+</li>
+
+<% end %>
+
+
+</ul>
+</div>
+<div>
+<a href="/contacts/new">Add Contacts</a>
+</div>
+</body>
+</html>
+
+
+
+
