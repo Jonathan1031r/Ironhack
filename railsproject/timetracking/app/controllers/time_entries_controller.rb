@@ -1,8 +1,24 @@
 class TimeEntriesController < ApplicationController
+	def update
+		@my_project = Project.find(params[:project_id])
+
+		@my_entry = @my_project.time_entries.find(params[:id])
+
+		if @my_entry.update(
+			hours: params[:time_entry][:hours],
+			minutes: params[:time_entry][:minutes],
+			date: params[:time_entry][:date],
+			comments: params[:time_entry][:comments])
+			redirect_to "/projects/#{@my_project.id}/time_entries"
+		else
+			render 'edit'
+		end	
+	end
+
 	def index
 		@my_project = Project.find(params[:project_id])
-		
-		@my_entry = @my_project.time_entries.new
+
+		@entries_array = @my_project.time_entries
 
 		render 'index'
 	end
@@ -23,12 +39,18 @@ class TimeEntriesController < ApplicationController
 			:hours => params[:time_entry][:hours],
 			:minutes => params[:time_entry][:minutes],
 			:date => params[:time_entry][:date],
-			:commentes => params[:time_entry][:comments])
+			:comments => params[:time_entry][:comments])
 
 		if @my_entry.save
-			redirect_to "/project/#{@my_project.id}/time_entries"
+			redirect_to "/projects/#{@my_project.id}/time_entries"
 		else
 			render "new"
 		end		
+	end
+
+	def edit
+		@my_project = Project.find(params[:project_id])
+
+		@my_entry = @my_project.time_entries.find(params[:id])
 	end
 end

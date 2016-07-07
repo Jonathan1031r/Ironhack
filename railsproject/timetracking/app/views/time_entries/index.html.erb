@@ -6,18 +6,22 @@
 <body>
 <h1><%= @my_project.name %></h1>
 <ul>
-	<% @my_entry.each do |entry| %>
+	<% @entries_array.each do |entry| %>
 	<li>
 		<%= entry.hours %> 
 		<%= entry.minutes %> 
 		<%= entry.date %>
 		<p> <%= entry.comments %> </p>
+
+		<a href="/projects/<%= @my_project.id %>/time_entries/<%= entry.id %>/edit">
+			Edit
+		</a>
 	</li>
 	<% end %>
 </ul>
 
-<a href="/products/<%= @my_project.id %>/time_entries">
-	
+<a href="/projects/<%= @my_project.id %>/time_entries/new">
+	Add a time entry to <%= @my_project.name %>
 </a>
 </body>
 </html>

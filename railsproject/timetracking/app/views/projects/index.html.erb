@@ -6,6 +6,9 @@
 		<a href="/projects/<%= the_project.id %>">
 		<%= the_project.name %>
 		</a>
+      <% if the_project.description != nil %>
+         <%= the_project.description %>
+      <% end %>
 
 	</li>
 	<% end %>
