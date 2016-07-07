@@ -26,7 +26,10 @@ Rails.application.routes.draw do
 		to: 'time_entries#edit'
 
 	patch '/projects/:project_id/time_entries/:id',
-		to: 'time_entries#update', as: 'project_time_entry' 	
+		to: 'time_entries#update', as: 'project_time_entry' 
+
+	delete '/projects/:project_id/time_entries/:id',
+		to: 'time_entries#destroy'		
 
 end
 
