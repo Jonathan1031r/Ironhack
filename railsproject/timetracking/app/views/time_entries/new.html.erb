@@ -9,29 +9,9 @@
 	<%= @my_project.name %>
 </h2></center>
 
-<% if @my_entry.errors.any? %>
+<h2> Create anew time entry in <%= @my_project.name %> project </h2>
 
-	<ul>
-	<% @my_entry.errors.full_messages.each do |error_msg| %>
-		<li><%= error_msg %></li>
-	<% end %>	
-	</ul>
-<%end %>	
+<%= render 'form' %>
 
-<%= form_for [@my_project, @my_entry] do |f| %>
-	<%= f.label :hours %>
-	<%= f.number_field :hours %> 
-	<br>
-	<%= f.label :minutes %>
-	<%= f.number_field :minutes%>
-	<br>
-	<%= f.label :date %>
-	<%= f.date_field :date %>
-	<br>
-	<%= f.label :comments %>
-	<%= f.text_field :comments %>
-	<br>
-	<%= f.button "Save" %>
-<% end %>
 </body>
 </html>
