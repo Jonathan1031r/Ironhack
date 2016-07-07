@@ -54,6 +54,6 @@ class TimeEntriesController < ApplicationController
 	private
 
 	def entry_params
-		params.require(:time_entry).permit(:hours, :comments, :minuts, :date)
+		params.require(:time_entry).permit(:hours, :comments, :minutes, :date)
 	end
 end
