@@ -8,12 +8,16 @@
 <ul>
 	<% @my_entries.each do |entry| %>
 	<li>
-		<%= entry.hours %> h
-		<%= entry.minutes %> m -
+		<%= entry.hours %> 
+		<%= entry.minutes %> 
 		<%= entry.date %>
+		<p> <%= entry.comments %> </p>
 	</li>
 	<% end %>
 </ul>
 
+<a href="/products/<%= @my_project.id %>/time_entries">
+	
+</a>
 </body>
 </html>

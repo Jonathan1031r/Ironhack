@@ -2,7 +2,7 @@ class TimeEntriesController < ApplicationController
 	def index
 		@my_project = Project.find(params[:project_id])
 
-		@my_entries = @my_project.time_entries
+		@my_entry = @my_project.time_entries
 
 		render 'index'
 	end
@@ -11,7 +11,8 @@ class TimeEntriesController < ApplicationController
 		@my_project = Project.find(params[:project_id])
 
 		@my_entry = @my_project.time_entries.new
-
+		# ^ Can also be writen like v
+		# @my_entry = TimeEntry.new(project_id: @my_project.id)
 		render 'new'
 	end
 
@@ -22,7 +23,7 @@ class TimeEntriesController < ApplicationController
 			:hours => params[:time_entry][:hours],
 			:minutes => params[:time_entry][:minutes],
 			:date => params[:time_entry][:date],
-			:commentes => params[:time_entry][:commentes])
+			:commentes => params[:time_entry][:comments])
 
 		if @my_entry.save
 			redirect_to "/project/#{@my_project.id}/time_entries"

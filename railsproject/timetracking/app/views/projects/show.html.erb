@@ -3,10 +3,19 @@
 <head>
 	<title></title>
 </head>
-<body>
-<h2><%= @my_project.name %></h2>
-
-<p><%= @my_project.desscription %></p>
+<ul>
+  <li>
+    <% if @project.name.present? %>
+      <%= @project.name %> -
+    <% end %>
+    <% if @project.description.present? %>
+      <%= @project.description %>
+    <% end %>
+    <% if @project.due_date.present? %>
+      <%= @project.due_date %>
+    <% end %>
+  </li>
+</ul>
 
 </body>
 </html>

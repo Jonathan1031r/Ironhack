@@ -4,10 +4,15 @@
 	<title></title>
 </head>
 <body>
-<% if @my_entry.error.any? %>
+<center><h2>
+	Add new Time Entry
+	<%= @my_project.name %>
+</h2></center>
+
+<% if @my_entry.errors.any? %>
 
 	<ul>
-	<% @my_entry.errors.full_message.each do |error_msg| %>
+	<% @my_entry.errors.full_messages.each do |error_msg| %>
 		<li><%= error_msg %></li>
 	<% end %>	
 	</ul>
@@ -15,13 +20,13 @@
 
 <%= form_for [@my_project, @my_entry] do |f| %>
 	<%= f.label :hours %>
-	<%= f.text_field :hours %> 
+	<%= f.number_field :hours %> 
 	<br>
 	<%= f.label :minutes %>
-	<%= f.text_field :minutes%>
+	<%= f.number_field :minutes%>
 	<br>
 	<%= f.label :date %>
-	<%= f.text_field :date %>
+	<%= f.date_field :date %>
 	<br>
 	<%= f.label :comments %>
 	<%= f.text_field :comments %>

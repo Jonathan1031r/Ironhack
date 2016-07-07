@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Auctions</title>
+</head>
+<body>
+<center><h2><u>Welcome to Online Auctions</u></h2></center>
+
+<center>
+<form action="/products/create" method="POST">
+  <div>
+    <label for="product_title">Title</label>
+    <input type="text" name="product[title]" id="product_title">
+  </div>
+
+  <div>
+    <label for="product_description">Description</label>
+    <textarea name="product[description]" id="product_description"></textarea>
+  </div>
+
+  <div>
+    <label for="product_deadline">Deadline</label>
+    <input type="date" name="product[deadline]" id="product_deadline">
+  </div>
+
+  <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <button type="submit">Submit Product</button>
+</form>
+</center>
+
+
+</body>
+</html>
