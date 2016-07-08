@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<ul>
+	<% @concerts_array.each do |show| %>
+	<li>
+		<%= show.artist %>
+		<%= show.venue %>
+		<%= show.city %>
+		<%= show.date %>
+		<%= show.price %>
+		<p><%= show.description %></p>
+	</li>
+		<% end %>
+</ul>
+</body>
+</html>
