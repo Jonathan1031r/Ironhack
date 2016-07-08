@@ -35,3 +35,5 @@ class ContactsController < ApplicationController
 		
 	end
 end
+
+ 

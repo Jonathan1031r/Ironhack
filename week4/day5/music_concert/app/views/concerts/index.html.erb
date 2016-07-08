@@ -1,22 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 
+<center>
+	<%= link_to("Create new event", new_concert_path) %>
+	<h2><u>Todays Concerts</u></h2>
 
-<ul>
-	<% @concerts_array.each do |show| %>
+	<% @todays_concerts.each do |show| %>
 	<li>
-		<%= show.artist %>
-		<%= show.venue %>
-		<%= show.city %>
-		<%= show.date %>
-		<%= show.price %>
+		<h3><%= show.artist %></h3>
+		Venue: <%= show.venue %><br>
+		City: <%= show.city %><br>
+		Date: <%= show.date %><br>
+		Price: <%= show.price %><br>
 		<p><%= show.description %></p>
 	</li>
 		<% end %>
-</ul>
-</body>
-</html>
+
+	<h2><u>All Concerts</u></h2>
+
+	<% @concerts_array.each do |show| %>
+	<li>
+		<a href="/concerts/<%=@the_concert.id%>/show">
+		<h3><%= show.artist %></h3>
+		</a>
+		Date: <%= show.date %><br>
+
+	</li>
+		<% end %>
+
+</center>
+
+
