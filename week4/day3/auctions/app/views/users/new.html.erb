@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Auctions</title>
+</head>
+<body>
+<center><h2><u>Welcome to Online Auctions</u></h2>
+<h4>Enter your info to register</h4></center>
+
+<center>
+<form action="/user/new" method="POST">
+  <div>
+    <label for="user_name">Name</label>
+    <input type="text" name="user[name]" id="user_name">
+  </div>
+
+  <div>
+    <label for="user_email">Email</label>
+    <input type="text" name="user[email]" id="user_email"></input>
+  </div>
+
+  <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <button type="submit">Sign Up</button>
+</form>
+</center>
+
+
+</body>
+</html>
