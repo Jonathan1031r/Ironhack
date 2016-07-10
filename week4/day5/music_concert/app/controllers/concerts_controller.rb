@@ -7,7 +7,6 @@ class ConcertsController < ApplicationController
 	end
 
 	def index
-		@the_concert = Concert.where(params[:concert_id])
 
 		@concerts_array = Concert.all
 
@@ -38,10 +37,13 @@ class ConcertsController < ApplicationController
 			redirect_to(new_concerts_path)	
 		end
 	end
-
+#============ nothing can go under private ===============
 	private
 
 	def concert_params
 		params.require(:concert).permit(:artist, :venue, :city, :date, :price, :description)
 	end
 end
+
+
+

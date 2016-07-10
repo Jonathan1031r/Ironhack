@@ -18,7 +18,7 @@
 
 	<% @concerts_array.each do |show| %>
 	<li>
-		<a href="/concerts/<%=@the_concert.id%>/show">
+		<a href="/concerts/<%=show.id%>">
 		<h3><%= show.artist %></h3>
 		</a>
 		Date: <%= show.date %><br>
