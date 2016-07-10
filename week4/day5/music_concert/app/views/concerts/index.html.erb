@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css"/> 	
+</head>
+<body>
 
 <center>
 	<%= link_to("Create new event", new_concert_path) %>
@@ -11,9 +19,12 @@
 		Date: <%= show.date %><br>
 		Price: <%= show.price %><br>
 		<p><%= show.description %></p>
+		<p><u>Comments</u></p>
+		<p><%= show.comments %></p>
 	</li>
 		<% end %>
 
+<div> 
 	<h2><u>All Concerts</u></h2>
 
 	<% @concerts_array.each do |show| %>
@@ -25,7 +36,11 @@
 
 	</li>
 		<% end %>
+</div>
 
 </center>
 
+
+</body>
+</html>
 

@@ -6,8 +6,19 @@
 		City: <%= @the_concert.city %><br>
 		Date: <%= @the_concert.date %><br>
 		Price: <%= @the_concert.price %><br>
-		<p><%= @the_concert.description %></p>
+		<p><%= @the_concert.description %></p><br>
+		<p><u>Comments</u></p>
+		<p><%= @the_concert.comments %></p>
 	</li>
 		
+<%= form_for [@the_concert] do |f| %>
+
+	<%= f.label :comments %>
+	<%= f.text_field :comments %>
+	<br>
+	<%= f.button "Submit" %><br>
+	<%= link_to('Cancel', concerts_path) %>
+<% end %>
+
 <a href="/concerts">Go Back</a>
 </center>
