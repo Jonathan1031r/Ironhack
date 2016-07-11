@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="UTF-8">
+	<link rel="stylesheets" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">	
+</head>
+<body>
+
 <center><h2><u>
 	Details of your seletion
 </u></h2>
@@ -10,7 +20,10 @@
 		<p><u>Comments</u></p>
 		<p><%= @the_concert.comments %></p>
 	</li>
-		
+
+
+
+
 <%= form_for [@the_concert] do |f| %>
 
 	<%= f.label :comments %>
@@ -20,5 +33,11 @@
 	<%= link_to('Cancel', concerts_path) %>
 <% end %>
 
+
+
 <a href="/concerts">Go Back</a>
 </center>
+
+
+</body>
+</html>

@@ -13,10 +13,22 @@
  *= require_tree .
  *= require_self
  */
- .p{
- 	color: red;
+body{
+	background-image: url(
+		"http://www.fg-a.com/wallpapers/black-with-stars.jpg");
+    background-size: 100%;
+}
+ p{
+ 	color: white;
  }
+#commentbox{
+	background-color: white;
+}
+header{
+	height: 189px;
+	background-color: white;
 
-.background{
-	background-color: #70768E;
+}
+li{
+	color: white;
 }
