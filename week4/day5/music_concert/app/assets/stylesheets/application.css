@@ -14,15 +14,19 @@
  *= require_self
  */
 body{
-	background-image: url(
-		"http://www.fg-a.com/wallpapers/black-with-stars.jpg");
+	background-image: url("http://www.fg-a.com/wallpapers/black-with-stars.jpg");
     background-size: 100%;
+}
+u{
+	color: white;
+}
+text{
+	color: white;
 }
  p{
  	color: white;
  }
-#commentbox{
-	background-color: white;
+
 }
 header{
 	height: 189px;
@@ -30,5 +34,8 @@ header{
 
 }
 li{
+	color: white;
+}
+ul{
 	color: white;
 }

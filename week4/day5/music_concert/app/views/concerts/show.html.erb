@@ -11,6 +11,7 @@
 <center><h2><u>
 	Details of your seletion
 </u></h2>
+	<li>
 		<h3><%= @the_concert.artist %></h3>
 		Venue: <%= @the_concert.venue %><br>
 		City: <%= @the_concert.city %><br>
@@ -23,15 +24,16 @@
 
 
 
-
-<%= form_for [@the_concert] do |f| %>
+	
+	<%= form_for [@the_concert] do |f| %>
 
 	<%= f.label :comments %>
 	<%= f.text_field :comments %>
 	<br>
 	<%= f.button "Submit" %><br>
 	<%= link_to('Cancel', concerts_path) %>
-<% end %>
+	<% end %>
+
 
 
 

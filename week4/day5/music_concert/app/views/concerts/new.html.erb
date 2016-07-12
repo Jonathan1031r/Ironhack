@@ -7,43 +7,44 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">    
 </head>
 <body>
-<center>
-<h2>Add concert</h2>
+    <center>
+        <ul>
+        <h2>Add concert</h2>
 
-<%= form_for @the_concert do |f| %>
+        <%= form_for @the_concert do |f| %>
+            <div>
+            <%= f.label :artist %>
+            <%= f.text_field :artist %>
+            </div>
 
-    <div>
-    <%= f.label :artist %>
-    <%= f.text_field :artist %>
-    </div>
+            <div>
+            <%= f.label :venue %>
+            <%= f.text_field :venue %>
+            </div>
 
-    <div>
-    <%= f.label :venue %>
-    <%= f.text_field :venue %>
-    </div>
+            <div>
+            <%= f.label :city %>
+            <%= f.text_field :city %>
+            </div>
 
-    <div>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    </div>
+            <div>
+            <%= f.label :date %>
+            <%= f.datetime_select :date %>
+            </div>
 
-    <div>
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-    </div>
+            <div>
+            <%= f.label :price %>
+            <%= f.number_field :price %>
+            </div>
 
-    <div>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-    </div>
-
-    <div>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    </div>
-<%= f.button "Submit" %>
-<% end %>
-<a href="/concerts">Go Back</a>
+            <div>
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+            </div>
+            </ul>
+        <%= f.button "Submit" %>
+        <% end %>
+    <a href="/concerts">Go Back</a>
 </center>
 
 </body>

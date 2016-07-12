@@ -43,7 +43,7 @@ class ConcertsController < ApplicationController
 		if @the_concert.update(concert_params)
 			redirect_to "/concerts/#{@the_concert.id}"
 		end			
-			@the_concert.save
+		@the_concert.save
 	end
 #============ nothing can go under private ===============
 	private
