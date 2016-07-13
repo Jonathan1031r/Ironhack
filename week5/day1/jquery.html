@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
+  <head>
+  <title>Ironhack Characters</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src=""></script>	
-</head>
-<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+<body><center>
+	<h1 class="complex-heading">
+    HTTP Requests in JavaScript
+    <span>a.k.a. AJAX</span>
+  </h1>
+	<div class="list"></div>
+	<form class="js-character-form">
+		<div>
+		<input type="text" name="name" placeholder="Name">
+		</div>
+		<div>
+		<input type="text" name="occupation" placeholder="Occupation">
+		</div>
+		<div>
+		<input type="text" name="weapon" placeholder="Weapon">
+		</div>
+		<button class="js-submit btn-success active" type="submit">SUBMIT</button>
+	</form>
+	<br>
+  <button class="js-characters btn-success active"">Fetch characters</button>
 
-</body>
+  <ul class="js-fetch-characters "></ul>	
+
+</center></body>
 </html>
+
+
+
+
+
