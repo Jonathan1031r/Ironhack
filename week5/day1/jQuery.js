@@ -28,6 +28,8 @@ function showCharacters(response){
 
 	var charactersArray = response;
 
+	
+
 	charactersArray.forArray(function (thecharacter){
 
 	var listContent = 
