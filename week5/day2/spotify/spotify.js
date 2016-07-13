@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$(".theForm").on("submit", function(event){
 	event.preventDefault();	
 	theSearch()	
+	// $("img").on("click", showAlbum)
 	});
 });
 
@@ -19,15 +20,25 @@ function theSearch (){
 }
 
 function showArtist (response){
+	$("theForm").empty();
 
 	console.log(response)
 
  	response.artists.items.forEach(function (artist){
-		console.log(artist.name)
+		console.log(artist.name);
+		console.log(artist.images.url);
 
-// 		var picture = <img src="errythang.">
+		var name = artist.name;
 
-	("h3").text(artist.name)
+		// var images = artist.images[0].url;
+		
+		if (artist.images.length > 0){
+			$("#list").append(`<h1> ${name} </h1>`);
+			$("#list").append(`<img width="300" heigth="300" src=${artist.images[0].url}>`);
+		}
+
+
+
  	}
  )};
 
