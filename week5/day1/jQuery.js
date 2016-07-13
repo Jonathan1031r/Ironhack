@@ -1,48 +1,89 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-	$(".js-character-form").on("submit", createCharacters);
+  $(".js-character-form").on("submit", createCharacter);
 
-	$(".js-fetch-characters").no("click", fetchCharacters);
+  $(".js-fetch-characters").on("click", fetchCharacters);
+
 });
 
-function createCharacters (event){
-	event.preventDefault();
 
-	var name = $('[name="name"]').val();
-	var occupation = $('[name="occupation"]').val();
-	var weapon = $('[name="weapon"]').val();
 
-$(".js-character-list").prepend(listContent)
+function createCharacter (event) {
+  event.preventDefault();
+
+  var newName = $(".js-name-input").val();
+  var newOccupation = $(".js-occupation-input").val();
+  var newWeapon = $(".js-weapon-input").val();
+
+  var newCharacter = {
+    name: newName,
+    occupation: newOccupation,
+    weapon: newWeapon
+  };
+
+  $.ajax({
+    type: "POST",
+    url: "https://ironhack-characters.herokuapp.com/characters",
+    data: newCharacter,
+    success: showNewCharacter,
+    error: handleError
+  });
 }
 
-function fetchCharacters (){
-	$.ajax({
-		url: "http://ironhack-characters.herokuapp.com/characters", 
-		success: showCharacters,
-		error: handleError 
-	});
-}	
+function showNewCharacter () {
+  var newName = $(".js-name-input").val();
+  var newOccupation = $(".js-occupation-input").val();
+  var newWeapon = $(".js-weapon-input").val();
 
-function showCharacters(response){	
-	console.log(response);
+  var listContent = `
+    <li>
+      <h3> ${newName} </h3>
+      <ul>
+        <li> Occupation: ${newOccupation} </li>
+        <li> Weapon: ${newWeapon} </li>
+      </ul>
+    </li>
+  `;
 
-	var charactersArray = response;
+  $(".js-characters-list").append(listContent);
+}
 
-	
 
-	charactersArray.forArray(function (thecharacter){
 
-	var listContent = 
-	<li>
-		<h3> ${thecharacter.name} </h3>
-		
-		<ul>
-			<li> Occupation: ${thecharacter.occupation} </li>
-			<li> Weapon: ${thecharacter.weapon} </li>
-		</ul>
-	</li>
+function fetchCharacters () {
+  $.ajax({
+    type: "GET",
+    url: "https://ironhack-characters.herokuapp.com/characters",
+    success: showCharacters,
+    error: handleError
+  });
+}
 
-})}
+
+function showCharacters (response) {
+  var charactersArray = response;
+
+  $(".js-characters-list").empty();
+
+  charactersArray.forEach(function (theCharacter) {
+    var listContent = `
+      <li>
+        <h3> ${theCharacter.name} </h3>
+        <ul>
+          <li> Occupation: ${theCharacter.occupation} </li>
+          <li> Weapon: ${theCharacter.weapon} </li>
+        </ul>
+      </li>
+    `;
+
+    $(".js-characters-list").append(listContent);
+  });
+}
+
+function handleError (error) {
+  console.log("Oh no! There was an error.");
+  console.log(error.responseText);
+}
 
 
 
