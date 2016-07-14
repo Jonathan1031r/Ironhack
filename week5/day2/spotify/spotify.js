@@ -42,7 +42,7 @@ function showArtist (response){
 //---Not all objects had pictures ---- or more than just one ---------------------------vvvvvvv
 		if (artist.images.length > 0){
 			$("#list").append(`<h1> ${name} </h1>`);
-			$("#list").append(`<img width="300" heigth="300" data-id="${albums}" src=${artist.images[0].url}>`);
+			$("#list").append(`<img width="300" heigth="300" data-id="${}" src=${artist.images[0].url}>`);
 		}
  	})
 
