@@ -21,7 +21,7 @@ PokemonApp.Pokemon = class {
 				console.log(response.weight);
 				console.log(response.types.length);
 				var text = response.descriptions.sort().pop().resource_uri
-				var evlo = response.evolutions.sort().pop().resource_uri
+				var evol = response.evolutions.sort().pop().resource_uri
 		
 				$(".js-pkmn-name").text(response.name)
 				$(".js-pkmn-number").text(response.pkdx_id)
@@ -51,15 +51,27 @@ PokemonApp.Pokemon = class {
 
 		$('.js-btn').click(function(){
 		$.ajax({
-			url: `http://pokeapi.co${evlo}`,
+			url: `http://pokeapi.co${evol}`,
 			error: handleError,
 			success: function (response) {
 				$(".js-pkmn-name").text(response.name)
 				$(".js-pkmn-number").text(response.pkdx_id)
 				$(".js-pkmn-img").html(`<img src="http://pokeapi.co/media/img/${response.pkdx_id}.png">`)
+				$(".js-pkmn-name").text(response.name)
+				$(".js-pkmn-number").text(response.pkdx_id)
+				$(".js-pkmn-height").text(response.height)
+				$(".js-pkmn-weight").text(response.weight)
+				$(".js-pkmn-hp").text(response.hp)
+				$(".js-pkmn-attack").text(response.attack)
+				$(".js-pkmn-defense").text(response.defense)
+				$(".js-pkmn-sa").text(response.sp_atk)
+				$(".js-pkmn-sd").text(response.sp_def)
+				$(".js-pkmn-speed").text(response.speed)	
+					
+				var info = response.descriptions.sort().pop().resource_uris
 			}
 		});
-				// $(".js-pkmn-evloution").modal("show")
+				// $(".js-pkmn-evolution").modal("show")
 	});
 
 
