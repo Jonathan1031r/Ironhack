@@ -21,7 +21,8 @@ PokemonApp.Pokemon = class {
 				console.log(response.weight);
 				console.log(response.types.length);
 				var text = response.descriptions.sort().pop().resource_uri
-				var evlo
+				var evlo = response.evolutions.sort().pop().resource_uri
+		
 				$(".js-pkmn-name").text(response.name)
 				$(".js-pkmn-number").text(response.pkdx_id)
 				$(".js-pkmn-height").text(response.height)
@@ -45,9 +46,27 @@ PokemonApp.Pokemon = class {
 				$(".js-pkmn-description").html(response.description)
 			
 			}
-		})			
-
+		});			
 				$(".js-pokemon-modal").modal("show")
+
+		$('.js-btn').click(function(){
+		$.ajax({
+			url: `http://pokeapi.co${evlo}`,
+			error: handleError,
+			success: function (response) {
+				$(".js-pkmn-name").text(response.name)
+				$(".js-pkmn-number").text(response.pkdx_id)
+				$(".js-pkmn-img").html(`<img src="http://pokeapi.co/media/img/${response.pkdx_id}.png">`)
+			}
+		});
+				// $(".js-pkmn-evloution").modal("show")
+	});
+
+
+				
+
+				
+
 			}
 		});
 	};
