@@ -1,16 +1,24 @@
 $(document).ready(function(){
-	$(".js-btn").on("click", function(event){
+	$(".js-search-btn").on("click", function(event){
 		event.preventDefault();	
 		theSearch()	
+
+	$(".btn-play").on("click", function(){
+		$('.js-player').trigger('play');
+		});
+
+		$(".btn-play").on("click", function(){
+			$('.js-player').trigger('pause');
+			});		
 	});
 });
 
-var newSong = $(".theInput").val()
 
 function theSearch (){
+var newSong = $(".theInput").val()
 
 	$.ajax({
-		url: `https://api.spotify.com/v1/search?type=track&query=hello`, 
+		url: `https://api.spotify.com/v1/search?type=track&query=${newSong}`, 
 		success: songInfo,
 		error: handleError 
 
@@ -21,7 +29,10 @@ function songInfo (response){
 	$(".title").text(response.tracks.items[0].name)
 	$(".author").text(response.tracks.items[0].artists[0].name)
 	$(".cover").html(`<img src="${response.tracks.items[0].album.images[0].url}">`)
+	$("audio").prop("src", response.tracks.items[0].preview_url)
+	console.log(response)
 }
+
 
 
 
