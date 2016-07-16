@@ -3,13 +3,12 @@ $(document).ready(function(){
 		event.preventDefault();	
 		theSearch()	
 
-	$(".btn-play").on("click", function(){
-		$('.js-player').trigger('play');
-		});
 
-		$(".btn-play").on("click", function(){
-			$('.js-player').trigger('pause');
-			});		
+	$(".btn-play").on("click", function (event){
+        event.preventDefault();
+        PausePlay();
+        $('.js-player').on('timeupdate', printTime);
+    	});	
 	});
 });
 
@@ -33,9 +32,30 @@ function songInfo (response){
 	console.log(response)
 }
 
+var check = 1;
+function PausePlay(){
+    if (check == 1) {
+    $('.js-player').trigger('play');
+    $('.btn-play').toggleClass('playing');
+    check = 0;
+    }
+    else if(check == 0) {
+        $('.js-player').trigger('pause');
+    $('.btn-play').toggleClass('playing');
+    check = 1;
+    }
+}
 
 
+function printTime () {
+  var current = $('.js-player').prop('currentTime');
+  //console.debug('Current time: ' + current);
+  $("progress").prop('value', current);
+  $('.js-player').prop('currentTime');
 
+}
+
+$('.js-player').on('timeupdate', printTime);
 
 
 function handleError (error) {
