@@ -35,14 +35,14 @@ function songInfo (response){
 var check = 1;
 function PausePlay(){
     if (check == 1) {
-    $('.js-player').trigger('play');
-    $('.btn-play').toggleClass('playing');
-    check = 0;
+	    $('.js-player').trigger('play');
+	    $('.btn-play').toggleClass('playing');
+	    check = 0;
     }
     else if(check == 0) {
         $('.js-player').trigger('pause');
-    $('.btn-play').toggleClass('playing');
-    check = 1;
+    	$('.btn-play').toggleClass('playing');
+    	check = 1;
     }
 }
 
