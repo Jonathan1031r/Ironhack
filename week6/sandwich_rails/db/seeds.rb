@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 tomatoe= Ingredient.create(name:"tomatoe", calories:50)
 lettuce= Ingredient.create(name:"lettuce", calories:60)
 onion= Ingredient.create(name:"onion", calories:20)
@@ -19,15 +18,15 @@ meatball_sub = Sandwich.create(name:"meetball sub", bread_type:"white" )
 burger = Sandwich.create(name:"burger",bread_type:"multigrain")
 chicken_sub = Sandwich.create(name:"chicken sub", bread_type:"white")
 
-SandwhichIngredient.create(sandwhich_id: meatball_sub.id, ingredient_id: meatball.id )
-SandwhichIngredient.create(sandwhich_id: meatball_sub.id, ingredient_id: onion.id )
-SandwhichIngredient.create(sandwhich_id: meatball_sub.id, ingredient_id: tomatoe.id )
+SandwichIngredient.create(sandwich_id: meatball_sub.id, ingredient_id: meatball.id )
+SandwichIngredient.create(sandwich_id: meatball_sub.id, ingredient_id: onion.id )
+SandwichIngredient.create(sandwich_id: meatball_sub.id, ingredient_id: tomatoe.id )
 
-SandwhichIngredient.create(sandwhich_id: burger.id, ingredient_id: beef.id)
-SandwhichIngredient.create(sandwhich_id: burger.id, ingredient_id: lettuce.id)
-SandwhichIngredient.create(sandwhich_id: burger.id, ingredient_id: ketchup.id)
-SandwhichIngredient.create(sandwhich_id: burger.id, ingredient_id: onion.id )
+SandwichIngredient.create(sandwich_id: burger.id, ingredient_id: beef.id)
+SandwichIngredient.create(sandwich_id: burger.id, ingredient_id: lettuce.id)
+SandwichIngredient.create(sandwich_id: burger.id, ingredient_id: ketchup.id)
+SandwichIngredient.create(sandwich_id: burger.id, ingredient_id: onion.id )
 
-SandwhichIngredient.create(sandwhich_id: chicken_sub.id, ingredient_id: chicken.id)
-SandwhichIngredient.create(sandwhich_id: chicken_sub.id, ingredient_id: tomatoe.id)
-SandwhichIngredient.create(sandwhich_id: chicken_sub.id, ingredient_id: lettuce.id)
+SandwichIngredient.create(sandwich_id: chicken_sub.id, ingredient_id: chicken.id)
+SandwichIngredient.create(sandwich_id: chicken_sub.id, ingredient_id: tomatoe.id)
+SandwichIngredient.create(sandwich_id: chicken_sub.id, ingredient_id: lettuce.id)
