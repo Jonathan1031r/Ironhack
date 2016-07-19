@@ -1,7 +1,7 @@
 class SandwichesController < ApplicationController
 	def index
 		sandwich = Sandwich.all
-		render json: sandwiches
+		render json: sandwich
 	end
 
 	def create
@@ -39,7 +39,8 @@ class SandwichesController < ApplicationController
 	end
 
 	def add_ingredients
-		the_sandwich = Sandwich.find(params[:id])
-
+		the_ingredient = Ingredient.find(id: params[:id])
+		.push(the_ingredient)
+		end
 	end
 end
