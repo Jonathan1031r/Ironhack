@@ -23,5 +23,6 @@ class ApplicationController < ActionController::Base
   	if current_user.nil? || current_user.role != "admin"
   		flash[:access_denied] = "Access Denied"
   		redirct_to "/"
+    end  
   end
 end
